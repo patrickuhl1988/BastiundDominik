@@ -58,6 +58,11 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+/* Center entire photo sections */
+.photo {
+  text-align: center;
+}
+
 /* Center section titles above images */
 .photo h2 {
   text-align: center;
