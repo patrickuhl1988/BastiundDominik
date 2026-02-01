@@ -45,6 +45,19 @@ header h1 {
   position: absolute;
   left: 0;
 }
+.portrait {
+  display: block;
+  max-width: 300px;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+.caption {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
 footer {
   text-align: center;
   padding: 1rem 0;
