@@ -65,6 +65,32 @@
   </section>
 
   <footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const portraits = Array.from(document.querySelectorAll('.portrait'));
+      let idx = 0;
+      setInterval(() => {
+        if (portraits.length === 0) return;
+        const target = portraits[idx++ % portraits.length];
+        const rect = target.getBoundingClientRect();
+        const arrow = document.createElement('span');
+        arrow.className = 'arrow';
+        arrow.textContent = '💘';
+        document.body.appendChild(arrow);
+        const startX = window.innerWidth / 2;
+        const startY = window.innerHeight;
+        const endX = rect.left + rect.width / 2;
+        const endY = rect.top + rect.height / 2;
+        arrow.animate([
+          { transform: `translate(${startX}px, ${startY}px) rotate(-45deg)` },
+          { transform: `translate(${endX}px, ${endY}px) rotate(-45deg)` }
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }).onfinish = () => arrow.remove();
+      }, 3000);
+    });
+  </script>
     <p>&copy; 2026 Basti & Dominik</p>
   </footer>
 </body>

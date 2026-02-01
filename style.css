@@ -87,6 +87,14 @@ header h1 {
 .hearts-bg .blue { color: blue; }
 .hearts-bg .purple { color: purple; }
 
+/* Arrow animation style */
+.arrow {
+  position: absolute;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 footer {
   text-align: center;
   padding: 1rem 0;
