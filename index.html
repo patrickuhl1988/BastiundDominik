@@ -69,7 +69,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const portraits = Array.from(document.querySelectorAll('.portrait'));
       let idx = 0;
-      setInterval(() => {
+      const shootArrow = () => {
         if (portraits.length === 0) return;
         const target = portraits[idx++ % portraits.length];
         const rect = target.getBoundingClientRect();
@@ -88,7 +88,10 @@
           duration: 1000,
           easing: 'ease-out'
         }).onfinish = () => arrow.remove();
-      }, 3000);
+      };
+      // Shoot one immediately and then every 3s
+      shootArrow();
+      setInterval(shootArrow, 3000);
     });
   </script>
     <p>&copy; 2026 Basti & Dominik</p>
